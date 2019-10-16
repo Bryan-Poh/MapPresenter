@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Map Presenter / Singapore</title>
+	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../css/nav.css">
+
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="navHeader">
+		<h1 class="nav-title"><b> Map Presenter </b>/ Singapore</h1>
+		
+		<!-- Burger -->
+  	<div id="menuToggle">
+	    <input type="checkbox" />
+	    <span></span>
+	    <span></span>
+	    <span></span>
+	    
+	    <ul id="menu">
+	      <a href="#"><li>Home</li></a>
+	      <a href="#"><li>Best Locations</li></a>
+	      <a href="#"><li>Contact</li></a>
+	    </ul>
+  	</div>
+	</div>
+	<!-- Input Box -->
+	<div class="addMapPointer">
+		<div class="addMapContent">
+			<input id="inputLocation" type="text" placeholder="Enter a location" onfocus="this.value=''"/>
+			<button id="btnAdd" class="buttonAdd" onClick="addMapPointer()">ADD PIN</button>	
+		</div>
+	</div>
+
+	<!-- Map -->
+	<div class="mapContent">
+		<div id="map" ></div>
+		<!-- <img src="../images/sg-map.png" alt="" class="map" width="1000px" height="500px"> -->
+	</div>
+</body>
+
+<script src="../js/script.js"></script>
+
+</html>
