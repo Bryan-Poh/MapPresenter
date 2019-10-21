@@ -1,21 +1,21 @@
+var pinCounter = 0;
+
 function addMapPointer(){
-		// var pin = document.createElement("div");
-		// pin.className = 'draggable';
-		
-		// var userInput = document.getElementById("inputLocation").value; //Get input
-		// pin.innerHTML = "<img class='draggable' src='../images/pin.png'/> <span class='locationName'>" + userInput + "</span>";
+    // Increment counter when addMapPointer function is called
+    pinCounter++;
+    document.getElementById("pin_counter").innerHTML = pinCounter;
 
-  //   document.getElementById("newPointer").appendChild(pin);
-
-
+    // Create a new div with class draggable
     var mappoint = document.createElement('div');
     mappoint.className = "draggable";
 
 
+    // Get location input 
     var x = document.getElementById("inputLocation").value;
     mappoint.innerHTML = "<img src='../images/pin.png'><span class='locationName'>" + x + "</span>";
 
-   	document.getElementById("map").appendChild(mappoint);
+    // Append map point
+    document.getElementById("map").appendChild(mappoint);
 
     // Obtain a node list of all elements that have class="draggable":
     var draggable = document.getElementsByClassName('draggable'),

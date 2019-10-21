@@ -31,17 +31,21 @@
 	<div class="addMapPointer">
 		<div class="addMapContent">
 			<input id="inputLocation" type="text" placeholder="Enter a location" onfocus="this.value=''"/>
-			<button id="btnAdd" class="buttonAdd" onClick="addMapPointer()">ADD PIN</button>	
+			<button id="btnAdd" class="buttonAdd" onClick="addMapPointer();">ADD PIN</button>	
 		</div>
 	</div>
 
 	<!-- Map -->
 	<div class="mapContent">
+		<div class="map-info">
+			<h1>No. Of Pins: <p id="pin_counter">0</p></h1>
+		</div>
 		<div id="map" ></div>
 		<!-- <img src="../images/sg-map.png" alt="" class="map" width="1000px" height="500px"> -->
 	</div>
 </body>
 
 <script src="../js/script.js"></script>
+<script src="../js/pinCounter.js"></script>
 
 </html>
