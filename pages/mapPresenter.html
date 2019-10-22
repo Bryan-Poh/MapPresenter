@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="../css/nav.css">
 
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+	<link href="../css/all.min.css" rel="stylesheet">
 </head>
 <body>
 	<div class="navHeader">
@@ -36,16 +37,13 @@
 	</div>
 
 	<!-- Map -->
-	<div class="mapContent">
+	<div class="mapContent" id="mapContent">
 		<div class="map-info">
-			<h1>No. Of Pins: <p id="pin_counter">0</p></h1>
+			<p class="map-info_pin-counter">No. Of Pins: <span id="pin_counter">0</span></p>
 		</div>
 		<div id="map" ></div>
-		<!-- <img src="../images/sg-map.png" alt="" class="map" width="1000px" height="500px"> -->
 	</div>
 </body>
 
 <script src="../js/script.js"></script>
-<script src="../js/pinCounter.js"></script>
-
 </html>

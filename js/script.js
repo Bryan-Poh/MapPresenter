@@ -9,11 +9,21 @@ function addMapPointer(){
     var mappoint = document.createElement('div');
     mappoint.className = "draggable";
 
-
     // Get location input 
     var x = document.getElementById("inputLocation").value;
     mappoint.innerHTML = "<img src='../images/pin.png'><span class='locationName'>" + x + "</span>";
 
+    // Create icon element with onclick function that removes the div, decrement the counter and change the innerhtml counter
+    var removeButton = document.createElement("i");
+    removeButton.className = 'map-point_removebutton fas fa-times';
+    removeButton.onclick = function() {
+        mappoint.remove();
+        pinCounter--;
+        document.getElementById("pin_counter").innerHTML = pinCounter;
+    };
+
+    // Append button to mappoint
+    mappoint.appendChild(removeButton);
     // Append map point
     document.getElementById("map").appendChild(mappoint);
 
@@ -25,7 +35,6 @@ function addMapPointer(){
     // This function initializes the drag of an element where an
     // event ("mousedown") has occurred:
     function startDrag(evt) {
-        
         // The element's position is based on its top left corner,
         // but the mouse coordinates are inside of it, so we need
         // to calculate the positioning difference:
@@ -60,3 +69,4 @@ function addMapPointer(){
         draggable[i].addEventListener('mousedown', startDrag);
     }
 }
+

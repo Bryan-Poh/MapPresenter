@@ -93,11 +93,20 @@ input[type=text]{
 }
 
 .locationName{
-	margin-top: 4vh;
-	text-align: center;
-	font-size: 1.2rem;
-	font-weight: bold;
-	/* 	background-color: black;
-		color: white; */
+	background: black; 
+  border-radius: 10px; 
+  color: #fff; 
+  font-size: 11px; 
+  clear: both; 
+  padding: 3px 5px;
 }
 
+.map-info{
+	float: right;
+}
+
+.map-point_removebutton{
+  cursor: pointer;
+  color: red;
+  display: inline-block;
+}
