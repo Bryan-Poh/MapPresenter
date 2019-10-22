@@ -37,9 +37,25 @@ function addMapPointer(){
     location.onclick = function(){
         document.getElementById("inputLocation").value = inputValue;
 
-        document.getElementById('inputLocation').onchange = function() {
-          location.innerHTML = document.getElementById("inputLocation").value;
-        };
+        function changeInput(){
+            location.innerHTML = document.getElementById("inputLocation").value;
+        }
+
+        document.getElementById('inputLocation').addEventListener("change", changeInput, false);
+
+        document.getElementById('inputLocation').addEventListener("keyup", function(event) {
+          // Number 13 is the "Enter" key on the keyboard
+          if (event.keyCode === 13) {
+            // Cancel the default action, if needed
+            event.preventDefault();
+            // Trigger the button element with a click
+            document.getElementById('inputLocation').removeEventListener("change", changeInput);
+            // Clear inputbox when added
+            document.getElementById("inputLocation").value = "";
+          }
+        });
+        
+
     }   
     
 
