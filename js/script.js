@@ -10,8 +10,11 @@ function addMapPointer(){
     mappoint.className = "draggable";
 
     // Get location input 
-    var x = document.getElementById("inputLocation").value;
-    mappoint.innerHTML = "<img src='../images/pin.png'><span class='locationName'>" + x + "</span>";
+    var inputValue = document.getElementById("inputLocation").value;
+    mappoint.innerHTML = "<img src='../images/pin.png'>";
+
+    // Clear inputbox when added
+    document.getElementById("inputLocation").value = "";
 
     // Create icon element with onclick function that removes the div, decrement the counter and change the innerhtml counter
     var removeButton = document.createElement("i");
@@ -21,6 +24,24 @@ function addMapPointer(){
         pinCounter--;
         document.getElementById("pin_counter").innerHTML = pinCounter;
     };
+
+
+    // Create a span element with class name and id attribute. InnerHTML value = inputValue 
+    var location = document.createElement("span");
+    location.className = "locationName";
+    location.setAttribute("id", "pinName");
+    location.innerHTML = inputValue;
+
+    // Append location to mapppoint variable, when onclick location name, input box value changes.
+    mappoint.appendChild(location);
+    location.onclick = function(){
+        document.getElementById("inputLocation").value = inputValue;
+
+        document.getElementById('inputLocation').onchange = function() {
+          location.innerHTML = document.getElementById("inputLocation").value;
+        };
+    }   
+    
 
     // Append button to mappoint
     mappoint.appendChild(removeButton);
